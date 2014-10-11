@@ -8,11 +8,12 @@ public class LongestCommonSubstring {
 		
 		// init states
 		LCSStates[0][0] = 0;
-		for(int i = 0; i < a.length(); i++){
+        
+		for(int i = 1; i < a.length(); i++){
 			LCSStates[i][0] = 0;
 		}
 		
-		for(int j = 0; j < b.length(); j++){
+		for(int j = 1; j < b.length(); j++){
 			LCSStates[0][j] = 0;
 		}
 		
