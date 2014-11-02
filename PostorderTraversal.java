@@ -7,6 +7,13 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+
+// set prev, curr pointer
+// push root while stack is not empty
+// peek stack as curr
+// three situations
+// prev = curr
+
 public class Solution {
     public ArrayList<Integer> postorderTraversal(TreeNode root) {
         ArrayList<Integer> result = new ArrayList<Integer>();
@@ -31,7 +38,7 @@ public class Solution {
                 if (curr.right != null) {
                     stack.push(curr.right);
                 }
-            } else { // traverse up the tree from the right (this is a root whose left and right have been added already)
+            } else { // reach the left most node or there is no right node when traverse up from the left(prev=curr) or traverse up the tree from the right (this is a root whose left and right have been added already)
                 result.add(curr.val);
                 stack.pop();
             }
