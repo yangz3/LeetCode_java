@@ -17,6 +17,7 @@ public class Solution {
         if(B_start >= B.length){
             return A[A_start + k - 1];
         }
+        
         if(k == 1){
             return Math.min(A[A_start], B[B_start]);
         }
