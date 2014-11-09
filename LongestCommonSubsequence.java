@@ -2,6 +2,8 @@
 public class LongestCommonSubsequence {
 	
 	private static int LCSubsequence(String a, String b){
+		
+		// LCStates[i][j] stands for maximum chars match between a[0 .. i - 1] and b[0 .. j - 1]
 		int[][] LCSStates = new int[a.length() + 1][b.length() + 1];
 		// init states
 		LCSStates[0][0] = 0;
@@ -15,6 +17,8 @@ public class LongestCommonSubsequence {
 		// build up the states matrix
 		for(int i = 1; i <= a.length(); i++){
 			for(int j = 1; j <= b.length(); j++){
+				
+				// careful with ith and index conversion
 				if(a.charAt(i - 1) == b.charAt(j - 1)){
 					LCSStates[i][j] = LCSStates[i - 1][j - 1] + 1;
 				}else{
