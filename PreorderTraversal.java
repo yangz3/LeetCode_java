@@ -41,7 +41,11 @@ public class Solution {
         stack.push(root);
         while(!stack.empty()){
             TreeNode node = stack.pop();
+            
+            // deal with current node
             ret.add(node.val);
+            
+            // push back child node for next iteration
             if(node.right != null){
                 stack.push(node.right);
             }
