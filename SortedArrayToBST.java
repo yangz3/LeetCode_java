@@ -14,6 +14,7 @@ public class Solution {
         }
         int start = 0;
         int end = num.length - 1;
+        // three parameters in recursion function
         TreeNode head = buildTree(num, start, end);
         return head;
     }
