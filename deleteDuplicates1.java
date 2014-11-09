@@ -21,6 +21,7 @@ public class Solution {
         
         while(head.next != null && head.next.next != null){
             if(head.next.val == head.next.next.val){
+                // save their mark and then delete them all but one
                 int val = head.next.val;
                 head = head.next; // reserve one duplicate
                 // the condition of this while loop !!
