@@ -22,15 +22,13 @@ public class Solution {
         
         while(!stack.empty() || p != null){
             
-            // if it is not null, push to stack
-            //and go down the tree to left
+            // go left hard first
             if(p != null){
                 stack.push(p);
                 p = p.left;
                 
-                // if no left child
-                // pop stack, process the node
-                // then let p point to the right
+            // if cannot go left anymore
+            // 1. pop stack, 2. process the node 3.p points to the node.right
             }else{
                 TreeNode t = stack.pop();
                 lst.add(t.val);
