@@ -21,7 +21,8 @@ public class LongestCommonSubsequence {
 				// careful with ith and index conversion
 				if(a.charAt(i - 1) == b.charAt(j - 1)){
 					LCSStates[i][j] = LCSStates[i - 1][j - 1] + 1;
-				}else{
+				}else{ //和LCSubstring唯一的区别在这里 
+                    
 					LCSStates[i][j] = Math.max(LCSStates[i - 1][j], LCSStates[i][j - 1]);
 				}
 			}

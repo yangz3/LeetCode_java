@@ -32,7 +32,7 @@ public class Solution {
                     queue.offer(n.right);
                 }
             }
-            ret.add(0,temp);
+            ret.add(0,temp); // add to the front of the arraylist
         }
         
         return ret;

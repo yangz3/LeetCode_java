@@ -19,10 +19,12 @@ public class Solution {
         // use dummy node because start node could be the head
         // the we will need startPrev to be the dummy node
         
+        // set dummy node
         ListNode dummy = new ListNode(0);
         dummy.next = head;
         head = dummy;
         
+        // use four nodes to segment the original list
         ListNode start = head;
         ListNode startPrev = head;
         ListNode end = head;
@@ -38,13 +40,14 @@ public class Solution {
             startPrev = startPrev.next;
         }
         
-        for(int i = 0; i < m ; i++){
-            start = start.next;
-        }
+        start = startPrev.next;
+        
         
         ListNode cur = start.next;
         ListNode prev = start;
         ListNode next;
+        
+        // reverse the segment and then reverse the head and the tail
         
         for(int i = 0; i < n - m; i++){
             next = cur.next;

@@ -19,16 +19,21 @@ public class Solution {
     
     private boolean helper(TreeNode root){
         if(root != null){
+            // inorder traversal
+            
+            // left
             if(helper(root.left) != true){
                 return false;
             }
             
+            // root
             if(prev != null && root.val <= prev.val ){
                 return false;
             }
             
             prev = root;
             
+            // right
             if(helper(root.right) != true){
                 return false;
             }

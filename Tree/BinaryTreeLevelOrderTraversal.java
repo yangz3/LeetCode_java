@@ -15,6 +15,7 @@ public class Solution {
                 TreeNode n = q.poll();
                 currentLevel.add(n.val);
                 
+                // check notnull before offer to the queue
                 if(n.left != null){
                     q.offer(n.left);
                 }

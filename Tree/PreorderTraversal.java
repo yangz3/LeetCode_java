@@ -45,7 +45,7 @@ public class Solution {
             // deal with current node
             ret.add(node.val);
             
-            // push back child node for next iteration
+            // push back child node for next iteration, check notnull before push into stack
             if(node.right != null){
                 stack.push(node.right);
             }

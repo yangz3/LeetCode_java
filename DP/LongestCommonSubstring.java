@@ -3,6 +3,8 @@ public class LongestCommonSubstring {
     //这道题用dp的意义不大，也可以用两重循环brutal force
     //但是LCSubsequence由于a.charAt(i - 1) ！= b.charAt(j - 1)时要保留之前subproblem的结果，因此dp价值提现
     
+    // states[i][j]代表以stringA[i]和stringB[j]结尾的字符串当前最大连续相同字符串的长度是多少
+    
     // The idea is to find length of the longest common suffix for all
     // substrings of both strings and store these lengths in a table.
     private static int LCSubString(String a, String b) {
@@ -20,7 +22,7 @@ public class LongestCommonSubstring {
             LCSStates[0][j] = 0;
         }
         
-        // following steps build LCSStates[][] in bottom up fashion
+        // following steps build LCSStates[][] in from top left to bottom right
         for (int i = 1; i <= a.length(); i++) {
             for (int j = 1; j <= b.length(); j++) {
                 if (a.charAt(i - 1) == b.charAt(j - 1)) {

@@ -20,16 +20,19 @@ public class Solution {
     }
     
     private TreeNode buildTree(int[] num, int start, int end){
+        // base case
         if(start > end){
             return null;
         }
+        
+        // recursion case
         TreeNode node = new TreeNode(num[(end+start)/2]);
         
-        // divide
+        // (divide)
         node.left = buildTree(num, start, (start + end) / 2 - 1);
         node.right = buildTree(num, (start + end) / 2 + 1, end);
         
-        // conquer
+        // (conquer)
         return node;
     }
     

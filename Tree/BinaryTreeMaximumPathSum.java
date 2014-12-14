@@ -19,18 +19,20 @@ public class Solution {
         helper(root);
         return maxSum;
     }
+    
+    // divide and conquer, update a global value in recursion
     public int helper(TreeNode node){
         if(node == null){
             return 0;
         }
         
-        int maxSumFromLeft = helper(node.left);
+        int maxSumFromLeft = helper(node.left); // divide
         int maxSumFromRight = helper(node.right);
         
         
         maxSum = Math.max(findMax(maxSumFromLeft+node.val, maxSumFromRight+node.val, node.val, maxSumFromRight+node.val+maxSumFromLeft), maxSum);
         
-        if(Math.max(maxSumFromLeft, maxSumFromRight) > 0){ // easy to not remember
+        if(Math.max(maxSumFromLeft, maxSumFromRight) > 0){ // conquer
             return Math.max(maxSumFromLeft, maxSumFromRight) + node.val;
         }else{
             return node.val;

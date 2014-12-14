@@ -8,6 +8,28 @@
  * }
  */
 
+// recursion solution
+
+/*
+public ArrayList<Integer> postorderTraversal(TreeNode root){
+    ArrayList<Integer> ret = new ArrayList<Integer>();
+    if(root == null){
+        return ret;
+    }
+    helper(root);
+    return root;
+}
+
+void helper(TreeNode root){
+    if(root == null){
+    return;
+    }
+    helper(root.left);
+    helper(root.right);
+    ret.add(root.val);
+}
+ */
+
 // set prev, curr pointer
 // push root while stack is not empty
 // peek stack as curr
@@ -38,7 +60,10 @@ public class Solution {
                 if (curr.right != null) {
                     stack.push(curr.right);
                 }
-            } else { // reach the left most node or there is no right node when traverse up from the left(prev=curr) or traverse up the tree from the right (this is a root whose left and right have been added already)
+            } else {
+                // reach the left most node
+                // or there is no right node when traverse up from the left(prev=curr)
+                // or traverse up the tree from the right (this is a root whose left and right have been added already)
                 result.add(curr.val);
                 stack.pop();
             }
