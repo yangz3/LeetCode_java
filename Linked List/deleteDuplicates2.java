@@ -22,7 +22,7 @@ public class Solution {
         while(head.next != null && head.next.next != null){
             if(head.next.val == head.next.next.val){
                 int val = head.next.val;
-                // the condition of this while loop !!
+           
                 // remove all duplicates
                 while(head.next != null && head.next.val == val){
                     head.next = head.next.next;

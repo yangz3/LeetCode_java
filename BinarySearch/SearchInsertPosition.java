@@ -13,10 +13,10 @@ public class Solution {
                 return midIndex;
             }else{
                 if(A[midIndex] < target){
-                    startIndex = midIndex + 1;
+                    startIndex = midIndex; // rather than midIndex + 1
                 }
                 if(A[midIndex] > target){
-                    endIndex = midIndex - 1;
+                    endIndex = midIndex;
                 }
             }
         }
@@ -34,4 +34,5 @@ public class Solution {
         return startIndex + 1;
         
     }
+    
 }
