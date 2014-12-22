@@ -7,6 +7,8 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+
+/*
 public class Solution {
     // traversal 的解法， 亲力亲为
     TreeNode prev;
@@ -43,4 +45,35 @@ public class Solution {
         
         return true;
     }
+}
+*/
+
+// iteration solution, more elegant to not use global variable
+public class Solution {
+    public boolean isValidBST(TreeNode root){
+        if(root == null){
+            return true;
+        }
+        
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        
+        TreeNode p = root;
+        
+        TreeNode pre = null;
+        while(!stack.empty() || p != null){
+            if(p != null){
+                stack.push(p);
+                p = p.left;
+            }else{
+                TreeNode node = stack.pop();
+                if(pre != null && pre.val >= node.val){
+                    return false;
+                }
+                pre = node;
+                p = node.right;
+            }
+        }
+        return true;
+    }
+    
 }
