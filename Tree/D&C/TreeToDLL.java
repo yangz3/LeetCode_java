@@ -1,7 +1,13 @@
+
+public Node treeToDLL(Node root){
+    if(root == null){
+        return null;
+    }
+    return treeToList(root);
+}
 /*
  helper function -- given two list nodes, join them
  together so the second immediately follow the first.
- Sets the .next of the first and the .previous of the second.
  */
 public static void join(Node a, Node b) {
     a.right = b;
@@ -37,13 +43,15 @@ public static Node append(Node a, Node b) {
  */
 public static Node treeToList(Node root) {
     // base case: empty tree -> empty list
-    if (root==null) return(null);
+    if (root == null){
+        return(null);
+    }
 
-    // Recursively do the subtrees (leap of faith!)
+    // divide
     Node aList = treeToList(root.left);
     Node bList = treeToList(root.right);
 
-    // Make the single root node into a list length-1
+    // conquer
     // in preparation for the appending
     root.left = root;
     root.right = root;
@@ -56,6 +64,8 @@ public static Node treeToList(Node root) {
 
     return(aList);
 }
+
+
 
 
 
