@@ -9,7 +9,7 @@
  */
 public class Solution {
     public TreeNode sortedArrayToBST(int[] num) {
-        if(num == null){
+        if(num == null || num.length == 0){
             return null;
         }
         int start = 0;

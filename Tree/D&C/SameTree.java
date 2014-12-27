@@ -7,6 +7,8 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+
+// similar with isSymmetric, the only difference is what we pass to the recursion function
 public class Solution {
     public boolean isSameTree(TreeNode p, TreeNode q) {
         boolean ret;

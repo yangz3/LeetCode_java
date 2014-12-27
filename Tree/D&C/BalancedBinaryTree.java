@@ -7,6 +7,8 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+
+//skill use -1 to indicate false when we need to return int rather than boolean
 public class Solution {
     public boolean isBalanced(TreeNode root) {
         if(root == null){

@@ -7,6 +7,11 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+
+/* The minimum depth is the number of nodes along the shortest path from the 
+ root node down to the nearest *leaf* node.
+*/
+
 public class Solution {
     public int minDepth(TreeNode root) {
         if(root == null){
@@ -15,14 +20,17 @@ public class Solution {
         return helper(root);
     }
     public int helper(TreeNode node){
-        // leaf node is node with both sibling node to be null rather than null node
+        if(node == null){
+            return Integer.MAX_VALUE;
+        }
+        
         if(node.left == null && node.right == null){
             return 1;
         }
         
-        //ignore null sibling node by assigning it with a max value
-        int leftDepth = node.left == null ?  Integer.MAX_VALUE : helper(node.left);
-        int rightDepth = node.right == null ?  Integer.MAX_VALUE : helper(node.right);
+        
+        int leftDepth =  helper(node.left);
+        int rightDepth =  helper(node.right);
         
         return(Math.min(leftDepth,rightDepth) + 1);
     }

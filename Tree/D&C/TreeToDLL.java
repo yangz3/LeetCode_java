@@ -9,7 +9,7 @@ public Node treeToDLL(Node root){
  helper function -- given two list nodes, join them
  together so the second immediately follow the first.
  */
-public static void join(Node a, Node b) {
+public void join(Node a, Node b) {
     a.right = b;
     b.left = a;
 }
@@ -19,7 +19,7 @@ public static void join(Node a, Node b) {
  helper function -- given two circular doubly linked
  lists, append them and return the new list.
  */
-public static Node append(Node a, Node b) {
+public Node append(Node a, Node b) {
     // if either is null, return the other
     if (a==null) return(b);
     if (b==null) return(a);
@@ -41,7 +41,7 @@ public static Node append(Node a, Node b) {
  Given an ordered binary tree, recursively change it into
  a circular doubly linked list which is returned.
  */
-public static Node treeToList(Node root) {
+public Node treeToList(Node root) {
     // base case: empty tree -> empty list
     if (root == null){
         return(null);

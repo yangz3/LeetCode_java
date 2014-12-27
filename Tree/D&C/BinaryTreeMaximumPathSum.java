@@ -7,6 +7,11 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+
+/*
+ Given a binary tree, find the maximum path sum.
+ The path may start and end at any node in the tree.
+ */
 public class Solution {
     
     // use a global value, not elegant
