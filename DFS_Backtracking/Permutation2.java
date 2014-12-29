@@ -1,3 +1,5 @@
+// Given a collection of numbers that might contain duplicates, return all possible unique permutations.
+
 public class Solution {
     public ArrayList<ArrayList<Integer>> permuteUnique(int[] num) {
         ArrayList<ArrayList<Integer>> rst = new ArrayList<ArrayList<Integer>>();

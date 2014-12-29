@@ -9,17 +9,15 @@ public class Solution {
         int m = S.length();
         int n = T.length();
         
-        // Let states(i, j) stand for the number of subsequences of S(0, i) in T(0, j)
+        // Let states(i, j) stand for the number of subsequences of T(0, j) in S(0, i)
         int[][] states = new int[m + 1][n + 1];
-        
-        states[0][0] = 0;
         
         for (int i = 0; i < m; i++) {
             states[i][0] = 1;
         }
         
-        for (int i = 1; i < n; i++) {
-            states[0][i] = 0;
+        for (int j = 1; j < n; j++) {
+            states[0][j] = 0;
         }
         
         for (int i = 1; i <= m; i++) {

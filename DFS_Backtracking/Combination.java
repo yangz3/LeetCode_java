@@ -14,9 +14,7 @@ public class Solution {
         }
         
         for(int i = pos; i <= n; i++){
-            if(!temp.contains(i)){
-                temp.add(i);
-            }
+            temp.add(i);
             helper(n, i+1, temp, rst, k);
             temp.remove(temp.size() - 1);
         }

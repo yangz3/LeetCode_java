@@ -30,6 +30,9 @@ public class Solution {
         helper(node.left);
         
         if(pre!= null && pre.val > node.val){
+            // when a pre node is used in inorder traversal
+            // pre != null is important to make sure check
+            // the value of node from the second visit node
             if(mark1 != null){ // if mistack appears more than once (twice), previous mistake's father node and current mistake's child node need to be exchanged.
                 
                 mark2 = node;

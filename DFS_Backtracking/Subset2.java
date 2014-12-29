@@ -1,3 +1,5 @@
+//Given a collection of integers that might contain duplicates, S, return all possible subsets.
+
 public class Solution {
     public ArrayList<ArrayList<Integer>> subsetsWithDup(int[] S) {
         ArrayList<Integer> temp = new ArrayList<Integer>();

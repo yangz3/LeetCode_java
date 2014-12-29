@@ -67,6 +67,9 @@ public class Solution {
             }else{
                 TreeNode node = stack.pop();
                 if(pre != null && pre.val >= node.val){
+                    // when a pre node is used in inorder traversal
+                    // pre != null is important to make sure check
+                    // the value of node from the second visit node
                     return false;
                 }
                 pre = node;

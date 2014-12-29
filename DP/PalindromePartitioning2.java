@@ -1,5 +1,5 @@
 // PalindromePartitioning1 is backtracking problem because it needs a list of all results
-
+// Return the minimum cuts needed for a palindrome partitioning of s.
 public class Solution {
     public int minCut(String s) {
         if (s == null || s.length() == 0) {
@@ -19,11 +19,16 @@ public class Solution {
             }
         }
         
-        return cut[s.length()] - 1;
+        return cut[s.length() - 1];
     }
     
-    private boolean isPalindrome(String s, int start, int end){ // check if substring i,j of s is palindrome
-        
+    private boolean isPalindrome(String s, int start, int end) {
+        for (int i = start, j = end; i < j; i++, j--) {
+            if (s.charAt(i) != s.charAt(j)) {
+                return false;
+            }
+        }
+        return true;
     }
     
 }
