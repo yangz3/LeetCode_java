@@ -16,12 +16,10 @@ public class Solution {
         int prev = -1;
         for(int i = pos; i < candidates.length; i++){
             if(candidates[i] <= targetLeft){
-                if(prev == -1 || candidates[i] != prev){ // same value cannot appear in same position
-                    temp.add(candidates[i]);
-                    helper(temp, rst, candidates, targetLeft - candidates[i], i); // it is i rather than i + 1 (kind of subset instead of partition)
-                    temp.remove(temp.size() - 1);
-                    prev = candidates[i];
-                }
+                temp.add(candidates[i]);
+                helper(temp, rst, candidates, targetLeft - candidates[i], i); // it is i rather than i + 1 to allow same element being used multiple times
+                temp.remove(temp.size() - 1);
+                
             }
         }
     }

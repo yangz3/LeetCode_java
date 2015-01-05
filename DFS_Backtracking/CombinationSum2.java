@@ -18,7 +18,7 @@ public class Solution {
             if(candidates[i] <= targetLeft){
                 if(candidates[i] != prev){ // same value cannot appear in same position
                     temp.add(candidates[i]);
-                    helper(temp, rst, candidates, targetLeft - candidates[i], i+1); // it is i rather than i + 1 (kind of subset instead of partition)
+                    helper(temp, rst, candidates, targetLeft - candidates[i], i+1); 
                     temp.remove(temp.size() - 1);
                     prev = candidates[i];
                 }
