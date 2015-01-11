@@ -26,7 +26,7 @@ public class Solution {
                 head = head.next; // reserve one duplicate
                 
                 // remove all other duplicates
-                while(head.next != null && head.next.val == val){ // always delete head.next, first make sure  head.next is not null
+                while(head.next != null && head.next.val == val){ // whenever call node.val first make sure that node is not null
                     head.next = head.next.next;
                 }
             }else{

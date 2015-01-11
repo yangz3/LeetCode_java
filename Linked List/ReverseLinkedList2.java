@@ -42,12 +42,10 @@ public class Solution {
         
         start = startPrev.next;
         
-        
+        // reverse the segment
         ListNode cur = start.next;
         ListNode prev = start;
         ListNode next;
-        
-        // reverse the segment and then reverse the head and the tail
         
         for(int i = 0; i < n - m; i++){
             next = cur.next;
@@ -56,6 +54,7 @@ public class Solution {
             cur = next;
         }
         
+        // connect the ends
         startPrev.next = end;
         start.next = endNext;
         

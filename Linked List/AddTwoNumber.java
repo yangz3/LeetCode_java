@@ -17,7 +17,9 @@ public class Solution {
         while(l1 != null && l2 != null){
             
             int value = (l1.val + l2.val + carry)%10;
-            head.next = new ListNode(value);
+            
+            head.next = new ListNode(value); // IMP
+            
             carry = (l1.val + l2.val + carry)/10;
             head = head.next;
             // don't forget move forward the cursor of l1 and l2
