@@ -1,3 +1,4 @@
+// same skill as minimumWindowSubstring
 public class Solution {
     // brutal force
     /*
@@ -29,14 +30,12 @@ public class Solution {
         
         HashSet<Character> set = new HashSet<Character>();
         
-        // maintain a set which contains no duplicates
-        // the boundary is from leftBound to the current i
+        // maintain a minWindowHashMap with pointer of leftBound
         int leftBound = 0, max = 0;
         for (int i = 0; i < s.length(); i++) {
             if (set.contains(s.charAt(i))) {
                 while (leftBound < i && s.charAt(leftBound) != s.charAt(i)) {
-                    // remove the duplicate char and the chars on the left of that
-                    // char to keep the set clean and of maximum length after the regulation
+                    // maintain a minWindowHashMap
                     set.remove(s.charAt(leftBound));
                     leftBound ++;
                 }

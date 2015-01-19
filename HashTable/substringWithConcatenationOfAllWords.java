@@ -1,10 +1,7 @@
 public class Solution {
     public ArrayList<Integer> findSubstring(String S, String[] L) {
         ArrayList<Integer> result = new ArrayList<Integer>();
-        
-        // use HashMap to save the number of each string in the list
         HashMap<String, Integer> toFind = new HashMap<String, Integer>();
-        // Another HashMap is used to save the number of strings we found.
         HashMap<String, Integer> found = new HashMap<String, Integer>();
         int m = L.length, n = L[0].length();
         
@@ -25,18 +22,24 @@ public class Solution {
             
             // parse the substring starting from i in chunck of length n
             for (int j = 0; j < m; j++){
-                int k = i + j * n;
-                String stub = S.substring(k, k + n);
+                int start = i + j * n;
+                String candidate = S.substring(start, start + n);
                 
-                if(!found.containsKey(stub)){
-                    found.put(stub, 1);
+                if(!toFind.containsKey(candidate)){ // trim
+                    break;
+                }
+                
+                if(!found.containsKey(candidate)){
+                    found.put(candidate, 1);
                 }
                 else{
-                    found.put(stub, found.get(stub) + 1);
+                    found.put(candidate, found.get(candidate) + 1);
                 }
                 
             }
-            if (found.equals(toFind)) result.add(i);
+            if (found.equals(toFind)) {
+                result.add(i);
+            }
         }
         return result;
     }

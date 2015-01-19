@@ -1,4 +1,5 @@
 public class Solution {
+    // solution1
     public int[] twoSum(int[] numbers, int target) {
         int[] ret = {-1,-1};
         HashMap<Integer, Integer> valueToIndex = new HashMap<Integer, Integer>();
@@ -21,5 +22,8 @@ public class Solution {
         }
         return ret;
     }
+    
+    // solution2 sandwiching
+    
     
 }
