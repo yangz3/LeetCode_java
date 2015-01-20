@@ -4,9 +4,7 @@ public class Solution {
         int[] ret = {-1,-1};
         HashMap<Integer, Integer> valueToIndex = new HashMap<Integer, Integer>();
         for(int i = 0; i < numbers.length; i++){
-            if(!valueToIndex.containsKey(numbers[i])){
-                valueToIndex.put(numbers[i], i);
-            }
+            valueToIndex.put(numbers[i], i);
         }
         
         for(int i = 0; i < numbers.length; i++){
