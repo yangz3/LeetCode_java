@@ -1,5 +1,5 @@
 // PalindromePartitioning1 is backtracking problem because it needs a list of all results
-// Return the minimum cuts needed for a palindrome partitioning of s.
+// Compared to 1, 2 only needs to return the minimum cuts needed for a palindrome partitioning of s.
 public class Solution {
     public int minCut(String s) {
         if (s == null || s.length() == 0) {
