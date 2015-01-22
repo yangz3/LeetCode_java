@@ -1,3 +1,5 @@
+//Compute and return the square root of x.
+
 public class Solution {
     public int sqrt(int x) {
         long lo = 0;

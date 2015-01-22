@@ -1,3 +1,5 @@
+//Given two sorted integer arrays A and B, merge B into A as one sorted array.
+
 public static void merge(int[] a, int[] b, int lastA, int lastB) {
     int indexMerged = lastB + lastA - 1; /* Index of last location of merged array */
     int indexA = lastA - 1; /* Index of last element in array b */
