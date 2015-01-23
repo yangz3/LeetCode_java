@@ -130,7 +130,7 @@ public class Solution {
             }
         }
         ArrayList<ArrayList<Integer>> ret = new ArrayList<ArrayList<Integer>>();
-        ret.addAll(set);
+        ret.addAll(set); // from hashset to arraylist 
         return ret;
     }
 }

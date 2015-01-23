@@ -14,10 +14,10 @@ public class Solution {
         for (int row=0; row<matrix.length; row++){
             for (int col=0; col<matrix[0].length; col++){
                 if (row==0){
-                    heights[row][col]=matrix[row][col]=='0'?0:1;
+                    heights[row][col]=matrix[row][col]=='0' ? 0 : 1;
                 }
                 else{
-                    heights[row][col]=matrix[row][col]=='0'?0:heights[row-1][col]+1;
+                    heights[row][col]=matrix[row][col]=='0' ? 0 : heights[row-1][col]+1;
                 }
             }
         }
